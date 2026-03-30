@@ -113,7 +113,7 @@ Run a local dev server (limited — Chrome APIs won't be available, but UI is pr
 ```bash
 npm run dev
 ```
-The app falls back to `localStorage` automatically when `chrome.storage` isn't available.
+The app falls back to `localStorage` automatically when `chrome.storage` isn't available
 
 ---
 
