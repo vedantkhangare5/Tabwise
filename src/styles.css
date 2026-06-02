@@ -351,16 +351,118 @@ input:focus { outline: none; }
   color: #f59e0b;
   border-color: rgba(245,158,11,0.3);
 }
+.page-btn.drag-over-page {
+  background: rgba(59,130,246,0.2);
+  border-color: rgba(59,130,246,0.5);
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
+}
+.page-btn.dragging {
+  opacity: 0.4;
+}
 .page-btn .page-icon { font-size: 16px; }
 .page-btn .page-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.page-count {
+.inline-edit-input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+.page-btn .page-count {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+.page-drag-handle {
+  color: rgba(255,255,255,0.2);
+  cursor: grab;
+  font-size: 14px;
+  padding: 2px 4px;
+  visibility: hidden;
+}
+.page-btn:hover .page-drag-handle {
+  visibility: visible;
+}
+.page-drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Page Drop Indicators */
+.page-drop-line-top,
+.page-drop-line-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3b82f6;
+  border-radius: 1px;
+  z-index: 10;
+}
+.page-drop-line-top { top: -2px; }
+.page-drop-line-bottom { bottom: -2px; }
+
+/* Emoji Picker */
+.emoji-picker-popup {
+  position: fixed;
+  width: 280px;
+  max-height: 220px;
+  background: #1e1e2d;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: default;
+}
+.emoji-picker-search {
+  background: rgba(255,255,255,0.05);
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+}
+.emoji-picker-search:focus {
+  background: rgba(255,255,255,0.08);
+}
+.emoji-picker-grid {
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.emoji-picker-grid::-webkit-scrollbar { width: 6px; }
+.emoji-picker-grid::-webkit-scrollbar-track { background: transparent; }
+.emoji-picker-grid::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+.emoji-picker-category {
   font-size: 11px;
-  color: rgba(255,255,255,0.3);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
-  background: rgba(255,255,255,0.07);
-  padding: 1px 6px;
-  border-radius: 999px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+.emoji-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.emoji-btn:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 /* add page input */
@@ -595,6 +697,23 @@ input:focus { outline: none; }
   background: rgba(245,158,11,0.07);
   box-shadow: 0 0 0 2px rgba(245,158,11,0.3);
 }
+.board-card.dragging {
+  opacity: 0.4;
+}
+
+/* Board Drop Indicators */
+.board-drop-line-left,
+.board-drop-line-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #3b82f6;
+  border-radius: 2px;
+  z-index: 10;
+}
+.board-drop-line-left { left: -10px; }
+.board-drop-line-right { right: -10px; }
 
 .board-header {
   display: flex;
@@ -654,6 +773,37 @@ input:focus { outline: none; }
   opacity: 0.4;
   transform: scale(0.97);
 }
+
+/* Card Drop Indicators */
+.card-drop-line-top,
+.card-drop-line-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 2px;
+  z-index: 10;
+}
+.card-drop-line-top { top: -5px; }
+.card-drop-line-bottom { bottom: -5px; }
+
+/* Drag Handle */
+.drag-handle {
+  color: rgba(255,255,255,0.2);
+  cursor: grab;
+  font-size: 14px;
+  padding: 2px 4px;
+  visibility: hidden;
+}
+.board-header:hover .drag-handle,
+.card-item:hover .drag-handle {
+  visibility: visible;
+}
+.drag-handle:active {
+  cursor: grabbing;
+}
+
 .card-favicon {
   width: 20px;
   height: 20px;
