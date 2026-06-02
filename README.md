@@ -13,7 +13,8 @@
 | 📄 **Pages** | Top-level categories (Work, Study, Personal, etc.) |
 | 📋 **Boards** | Color-coded boards inside each page |
 | 🔖 **Bookmarks** | Cards with real favicons, title & URL |
-| 🖱️ **Drag & Drop** | Move cards between boards with native HTML5 DnD |
+| 🖱️ **Drag & Drop** | Fully reorder pages, boards, and bookmark cards with native HTML5 DnD |
+| 😃 **Emoji Picker** | Custom emoji icon picker for your boards |
 | 🔍 **Search** | Real-time search — page-scoped or global |
 | 💾 **Persistence** | All data synced to `chrome.storage.local` |
 | ⚡ **Quick Save** | Press `Ctrl+Shift+Y` → pick a board → saved instantly |
